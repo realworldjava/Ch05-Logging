@@ -1,0 +1,32 @@
+{
+  "configuration": {
+    "status": "warn",
+    "appenders": {
+      "RollingFile": {
+        "name":"FILE",
+        "fileName":"java-log.log",
+        "filePattern":"java-log-%d{yyyy-MM-dd}-%i.log.gz",
+        "PatternLayout": {
+          "pattern":"%m%n"
+        },
+        "Policies": {
+          "TimeBasedTriggeringPolicy" : {},
+          "SizeBasedTriggeringPolicy": {
+            "size":"1 MB"
+          }
+        },
+        "DefaultRolloverStrategy": {
+          "max":"3"
+        }
+      }
+    },
+    "loggers": {
+      "root": {
+        "level": "error",
+        "AppenderRef": {
+          "ref": "FILE"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+Configuration:
+  status: warn
+  appenders:
+    RollingFile:
+      - name: FILE
+        fileName: $java-log.log
+        filePattern: java-log-%d{yyyy-MM-dd}-%i.log.gz
+        PatternLayout:
+          pattern: "%m%n"
+        Policies:
+          TimeBasedTriggeringPolicy:
+          SizeBasedTriggeringPolicy:
+            size: 1 MB
+        DefaultRollOverStrategy:
+          max: 3
+
+  Loggers:
+    Root:
+      level: error
+      AppenderRef:
+        ref: FILE

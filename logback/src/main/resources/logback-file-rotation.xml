@@ -1,0 +1,19 @@
+<configuration>
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>java-log.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>java-log-%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxFileSize>10KB</maxFileSize>
+            <maxHistory>3</maxHistory>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="ROLLING" />
+    </root>
+
+</configuration>

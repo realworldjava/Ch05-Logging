@@ -1,0 +1,29 @@
+{
+  "configuration": {
+    "status": "warn",
+    "appenders": {
+      "Console": {
+        "name": "STDOUT",
+        "PatternLayout": {
+          "pattern": "%m%n"
+        }
+      }
+    },
+    "loggers": {
+      "logger": {
+        "name": "com.wiley.realworldjava",
+        "level": "info",
+        "additivity": "false",
+        "AppenderRef": {
+          "ref": "STDOUT"
+        }
+      },
+      "root": {
+        "level": "error",
+        "AppenderRef": {
+          "ref": "STDOUT"
+        }
+      }
+    }
+  }
+}
