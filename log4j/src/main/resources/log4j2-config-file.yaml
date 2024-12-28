@@ -8,7 +8,7 @@ Configuration:
         PatternLayout:
           pattern: "%m%n"
         Policies:
-          TimeBasedTriggeringPolicy:
+          TimeBasedTriggeringPolicy: {}
           SizeBasedTriggeringPolicy:
             size: 1 MB
         DefaultRollOverStrategy:
